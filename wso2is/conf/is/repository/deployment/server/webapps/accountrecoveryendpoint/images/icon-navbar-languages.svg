@@ -1,0 +1,9 @@
+<svg id="icon-navbar-languages-v1.0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_2337" data-name="Rectangle 2337" width="24" height="24" fill="none"/>
+  <g id="Group_10682" data-name="Group 10682" transform="translate(-1497 -369)">
+    <path id="Ellipse_495" data-name="Ellipse 495" d="M7-.5A7.5,7.5,0,1,1-.5,7,7.508,7.508,0,0,1,7-.5Zm0,14A6.5,6.5,0,1,0,.5,7,6.507,6.507,0,0,0,7,13.5Z" transform="translate(1502 374)" fill="#222"/>
+    <path id="Line_554" data-name="Line 554" d="M13.163.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H13.163a.5.5,0,0,1,.5.5A.5.5,0,0,1,13.163.5Z" transform="translate(1502.463 378.528)" fill="#222"/>
+    <path id="Line_555" data-name="Line 555" d="M13.163.5H0A.5.5,0,0,1-.5,0,.5.5,0,0,1,0-.5H13.163a.5.5,0,0,1,.5.5A.5.5,0,0,1,13.163.5Z" transform="translate(1502.463 383.56)" fill="#222"/>
+    <path id="Ellipse_496" data-name="Ellipse 496" d="M3-.5c1.014,0,1.931.836,2.581,2.353A13.461,13.461,0,0,1,6.5,7a13.461,13.461,0,0,1-.919,5.147C4.931,13.664,4.014,14.5,3,14.5S1.069,13.664.419,12.147A13.461,13.461,0,0,1-.5,7,13.461,13.461,0,0,1,.419,1.853C1.069.336,1.986-.5,3-.5Zm0,14c1.182,0,2.5-2.669,2.5-6.5S4.182.5,3,.5.5,3.169.5,7,1.818,13.5,3,13.5Z" transform="translate(1506 374)" fill="#222"/>
+  </g>
+</svg>

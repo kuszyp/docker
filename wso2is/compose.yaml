@@ -1,0 +1,66 @@
+services:
+  db:
+    build: ./dockerfiles/postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+      start_period: 5s
+    volumes:
+      - volume_db:/var/lib/postgresql/data
+      - ./conf/postgres:/docker-entrypoint-initdb.d/
+
+  am:
+    build:
+      context: ./dockerfiles/am/
+      dockerfile: Dockerfile
+      args:
+        - BASE_AM_IMAGE:${BASE_AM_IMAGE}
+    volumes:
+      - ./conf/am:/home/wso2carbon/wso2-config-volume
+    depends_on:
+      db:
+        condition: service_healthy
+      is:
+        condition: service_healthy
+
+  is:
+    build:
+      context: ./dockerfiles/is/
+      dockerfile: Dockerfile
+      args:
+        - BASE_IS_IMAGE:${BASE_IS_IMAGE}
+    ports:
+      - 9763:9763
+      - 9443:9443
+      - 5005:5005
+    #command: -debug 5005
+    #command: -DosgiConsole
+    network_mode: host
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "curl",
+          "-k",
+          "-f",
+          "https://localhost:9443/carbon/admin/login.jsp",
+        ]
+      interval: 10s
+      retries: 10
+      start_period: 30s
+    volumes:
+      - ./conf/is:/home/wso2carbon/wso2-config-volume
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  volume_db:

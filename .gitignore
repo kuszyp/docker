@@ -1,0 +1,4 @@
+.idea/
+**/server.properties
+**/wso2is-init-project.xml
+.env
