@@ -1,0 +1,1 @@
+FROM ${BASE_AM_IMAGE}

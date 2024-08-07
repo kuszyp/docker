@@ -1,0 +1,11 @@
+services:
+  init-is:
+    build: .
+    ports:
+      - "8000:5000"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /home/soapuser
+    network_mode: host
