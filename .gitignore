@@ -1,3 +1,3 @@
-*/.idea/
-./wso2is-init/server.properties
-./wso2is-init/wso2is-init-project.xml
+.idea/
+**/server.properties
+**/wso2is-init-project.xml
