@@ -17,7 +17,7 @@ Docker templates used across the projects.
 
 ### template
 
-A docker composer template from [docs.docker.com/compose/compose-application-model/](docs.docker.com/compose/compose-application-model/).
+A docker composer template from [docs.docker.com/compose/compose-application-model/](https://docs.docker.com/compose/compose-application-model/).
 
 ### wso2is-init
 

@@ -1,0 +1,7 @@
+<svg id="icon-navigation-chevron-up-v1.0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_138902" data-name="Path 138902" d="M0,0H24V24H0Z" fill="none"/>
+  <g id="Group_6305" data-name="Group 6305" transform="translate(-359 -846)">
+    <path id="Path_138899" data-name="Path 138899" d="M0,0H20V20H0Z" transform="translate(361 848)" fill="none"/>
+    <path id="Path_138832" data-name="Path 138832" d="M.16,5.39,4.61,9.84a.548.548,0,0,0,.774,0l.328-.328a.548.548,0,0,0,0-.774L1.974,5,5.715,1.261a.548.548,0,0,0,0-.774L5.387.16a.548.548,0,0,0-.774,0L.16,4.614a.552.552,0,0,0,0,.776Z" transform="translate(376 855) rotate(90)" fill="#1A73DE"/>
+  </g>
+</svg>

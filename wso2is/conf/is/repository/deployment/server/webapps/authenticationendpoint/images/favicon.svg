@@ -1,0 +1,23 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_18" data-name="Rectangle 18" width="16" height="16"/>
+    </clipPath>
+  </defs>
+  <g id="_16X16_1" data-name="16X16 – 1" clip-path="url(#clip-path)">
+    <rect width="16" height="16" fill="#fff"/>
+    <g id="_512x512_1" data-name="512x512 – 1" clip-path="url(#clip-path)">
+      <rect id="Rectangle_17" data-name="Rectangle 17" width="16" height="16" fill="#0377ba"/>
+      <g id="Przyjazny-Urzad" transform="translate(2.237 1.41)">
+        <path id="Path_128899" data-name="Path 128899" d="M4.409,8.576H6.118A.4.4,0,0,0,6.5,8.161l.007-3.174H9.954L9.947,6.252h.765l.007-1.681a.4.4,0,0,0-.382-.415H6.125a.381.381,0,0,0-.277.124.415.415,0,0,0-.108.293V7.747H5.169V1.064A.4.4,0,0,0,4.793.65H1.518a.4.4,0,0,0-.378.414V13.521H1.9V1.479H4.409Z" transform="translate(-1.14 -0.65)" fill="#fff"/>
+        <rect id="Rectangle_2" data-name="Rectangle 2" width="1.06" height="1.065" transform="translate(6.781 5.216)" fill="#fff"/>
+        <rect id="Rectangle_3" data-name="Rectangle 3" width="1.06" height="1.065" transform="translate(6.781 6.943)" fill="#fff"/>
+        <rect id="Rectangle_4" data-name="Rectangle 4" width="1.06" height="1.065" transform="translate(1.777 3.49)" fill="#fff"/>
+        <rect id="Rectangle_5" data-name="Rectangle 5" width="1.06" height="1.065" transform="translate(1.777 1.979)" fill="#fff"/>
+        <rect id="Rectangle_6" data-name="Rectangle 6" width="1.06" height="1.065" transform="translate(1.777 5.216)" fill="#fff"/>
+        <path id="Path_128900" data-name="Path 128900" d="M16.454,70.33l-.554.765a6.858,6.858,0,0,0,4.982,2.391,8.154,8.154,0,0,0,5.311-2.4l-.567-.753C25.443,70.533,21.072,75.1,16.454,70.33Z" transform="translate(-14.301 -62.657)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

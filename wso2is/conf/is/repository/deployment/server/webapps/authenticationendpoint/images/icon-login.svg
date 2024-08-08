@@ -1,0 +1,7 @@
+<svg id="icon-login" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_6739" data-name="Rectangle 6739" width="24" height="24" fill="none"/>
+  <g id="user" transform="translate(4 3)">
+    <path id="path1332" d="M8.806,3.3A8.069,8.069,0,0,0,.8,10.975a.9.9,0,0,0,.9.939H15.95a.9.9,0,0,0,.89-.939A8.069,8.069,0,0,0,8.82,3.3Z" transform="translate(-0.8 6.086)" fill="#1a73de"/>
+    <path id="path1292" d="M6.05.51a4.133,4.133,0,0,0,0,8.265A4.133,4.133,0,0,0,6.05.51Z" transform="translate(1.971 -0.51)" fill="#1a73de"/>
+  </g>
+</svg>
