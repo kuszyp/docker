@@ -1,5 +1,6 @@
-# Use Debian Bookworm
-FROM debian:bookworm-20240722
+ARG DEBIAN_TAG
+# Use Debian
+FROM debian:${DEBIAN_TAG}
 
 ENV SOAPUI_VERSION 5.7.0
 ENV SOAPUI_URL https://s3.amazonaws.com/downloads.eviware/soapuios/${SOAPUI_VERSION}/SoapUI-${SOAPUI_VERSION}-linux-bin.tar.gz

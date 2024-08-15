@@ -14,7 +14,7 @@ type = "database_unique_id"
 
 [database.identity_db]
 type = "postgre"
-url = "jdbc:postgresql://127.0.0.1:5432/wso2_identity_db"
+url = "jdbc:postgresql://db:5432/wso2am_db"
 driver = "org.postgresql.Driver"
 username = "wso2dbuser"
 password = "wso2dbpassword"
@@ -31,7 +31,7 @@ commitOnReturn = true
 
 [database.shared_db]
 type = "postgres"
-url = "jdbc:postgresql://127.0.0.1:5432/wso2_shared_db"
+url = "jdbc:postgresql://db:5432/wso2am_shared_db"
 driver = "org.postgresql.Driver"
 username = "wso2dbuser"
 password = "wso2dbpassword"
@@ -133,12 +133,6 @@ enable_enhanced_feature = true
 #password = "admin"
 #'header.X-WSO2-KEY-MANAGER' = "WSO2IS"
 
-[[resource.access_control]]
-context = "(.*)/scim2/Me/(.*)"
-secure = true
-http_method = "GET"
-permissions = "none"
-scopes = "internal_login"
 
 [[resource.access_control]]
 context = "(.*)/keymanager-operations/user-info/claims(.*)"
@@ -210,6 +204,13 @@ http_method = "DELETE"
 permissions = "/permission/admin/manage/identity/usermgt/delete"
 scopes = "internal_user_mgt_delete"
 
+[[resource.access_control]]
+context = "(.*)/scim2/Me/(.*)"
+secure = true
+http_method = "GET"
+permissions = "none"
+scopes = "internal_login"
+
 [tenant_context.rewrite]
 custom_webapps = ["/keymanager-operations/"]
 
@@ -260,8 +261,12 @@ enable_verification = true
 verification_email_validity = "1440"
 
 [identity_mgt.user_onboarding]
+ask_password_from_user = true
 enable_email_verification = true
+verification_email_validity = "1440"
 lock_on_creation = true
+ask_password_email_validity = "1440"
+password_generator = "org.wso2.carbon.user.mgt.common.DefaultPasswordGenerator"
 
 [identity_mgt.password_reset_email]
 enable_password_reset_email = true

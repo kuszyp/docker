@@ -1,1 +1,0 @@
-FROM ${BASE_IS_IMAGE} 
