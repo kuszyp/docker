@@ -1,0 +1,21 @@
+services:
+  bootstrap:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DEBIAN_TAG: bookworm-slim
+    ports:
+      - "8000:5000"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /home/soapuser
+    networks:
+      - wso2-proxy
+
+networks:
+  wso2-proxy:
+    external:
+      name: wso2apim-network
