@@ -14,7 +14,7 @@ type = "database_unique_id"
 
 [database.apim_db]
 type = "postgre"
-url = "jdbc:postgresql://db:5432/wso2am_db"
+url = "jdbc:postgresql://db:5432/wso2_identity_db"
 driver = "org.postgresql.Driver"
 username = "wso2dbuser"
 password = "wso2dbpassword"
@@ -24,7 +24,7 @@ pool_options.defaultAutoCommit = false
 
 [database.shared_db]
 type = "postgre"
-url = "jdbc:postgresql://db:5432/wso2am_shared_db"
+url = "jdbc:postgresql://db:5432/wso2_shared_db"
 driver = "org.postgresql.Driver"
 username = "wso2dbuser"
 password = "wso2dbpassword"
