@@ -3,7 +3,7 @@
 <Property name="Class">org.wso2.carbon.user.core.jdbc.UniqueIDJDBCUserStoreManager</Property>
 <Property name="CountRetrieverClass">org.wso2.carbon.identity.user.store.count.jdbc.JDBCUserStoreCountRetriever</Property>
 <Property name="driverName">org.postgresql.Driver</Property>
-<Property name="url">jdbc:postgresql://wso2db-pgo-cluster-ha:5432/wso2am_citizens_db</Property>
+<Property name="url">jdbc:postgresql://db:5432/wso2_citizens_db</Property>
 <Property name="UsernameJavaRegEx">[a-zA-Z0-9._\-|//]{3,30}$</Property>
 <Property name="UsernameJavaScriptRegEx">^[\S]{5,30}$</Property>
 <Property name="UsernameJavaRegExViolationErrorMsg">Username pattern policy violated.</Property>
@@ -11,11 +11,11 @@
 <Property name="CaseInsensitiveUsername">false</Property>
 <Property name="UserNameUniqueAcrossTenants">false</Property>
 <Property name="UserRolesCacheEnabled">true</Property>
-<Property name="userName">wso2iam</Property>
+<Property name="userName">wso2dbuser</Property>
 <Property name="PasswordJavaRegEx">^[\S]{5,30}$</Property>
 <Property name="PasswordJavaScriptRegEx">^[\S]{5,30}$</Property>
 <Property name="PasswordDigest">SHA-256</Property>
-<Property name="password" encrypted="true">eyJjIjoiaXV0ZzR0ZlVJbXJRNGIzb2JRaVBxVjFFdVFZd1dIUGVkSk51M3BPMW1LUlJLZTVjQ24zNldqcjkycEROZUlWOXVyeXMxaEFUUEZZUGFHUVVuTC8zd1FrVTJLWlp0QjN6aFQxWGZNU21YcHcxQ3pBQnJ5ZzFqSVhMUkpZS0lNYkRld0tPUVlRUmZtNWxHY0FrcE9XNGdjcG1WZ2EwMXhOSVBIb2RkYVdJUEwxR1hGODhkWHNjNW5VcUExT0ZWVDdmYlR5OUJqZEVJUlI3L05paG5OMkltYUNIQlpPTnBndHVZMjNNWS9LT213NHhvalRoaVNqU3hiTy91QmlDYUVSRHFtWXN6UnFtQWpUY2VMazM3TFlEZjlvVDlyMHlzSUdKbFRFTW5GOFVHN245M2JNSW56b2Rtd21MMFNZZnFFeURLWFczNmRZK29CbkZ3NEVOQytCWlFRXHUwMDNkXHUwMDNkIiwidCI6IlJTQS9FQ0IvT0FFUHdpdGhTSEExYW5kTUdGMVBhZGRpbmciLCJ0cCI6IjM2MkI2RjNENjAwRTAxNEM4QkI3QUEwNUMwRkI5QUExODlBQzgxMDQiLCJ0cGQiOiJTSEEtMSJ9</Property>
+<Property name="password" encrypted="true">eyJjIjoiZXlKamFYQm9aWElpT2lKaGRqVXhSMmh6VDJWNVNEbFNjM0JDTlVGRFdFZG1aRUpTWWt0amREQm5PV2MzV2pGdVdsQlBJaXdpYVc1cGRHbGhiR2w2WVhScGIyNVdaV04wYjNJaU9pSkxTMmhCU0VaMFNrVmxLMk15UkRselprMUJORk4zUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRkJRVUZCUVVGQlFVRTlJbjA9IiwidCI6IkFFUy9HQ00vTm9QYWRkaW5nIiwiaXYiOiJLS2hBSEZ0SkVlK2MyRDlzZk1BNFN3QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUE9In0=</Property>
 <Property name="DomainName">CITIZENS</Property>
 <Property name="DomainName">CITIZENS</Property>
 <Property name="RolenameJavaRegEx">[a-zA-Z0-9._\-|//]{3,30}$</Property>
