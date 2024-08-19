@@ -17,5 +17,5 @@ services:
 
 networks:
   wso2-proxy:
-    external:
-      name: wso2apim-network
+    external: true
+    name: wso2apim-network
