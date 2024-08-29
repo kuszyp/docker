@@ -32,4 +32,3 @@ Full setup of WSO2 Api Manager with WSO2 Identity Server as a Key Manager.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
