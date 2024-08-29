@@ -36,7 +36,7 @@ services:
       test: ["CMD", "nc", "-z", "localhost", "9443"]
       interval: 10s
       start_period: 60s
-      retries: 20
+      retries: 10
     volumes:
       - ./conf/am:/home/wso2carbon/wso2-config-volume
     ports:

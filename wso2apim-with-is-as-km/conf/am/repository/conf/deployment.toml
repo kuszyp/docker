@@ -32,20 +32,21 @@ pool_options.maxActive = 100
 pool_options.maxWait = 60000
 pool_options.defaultAutoCommit = false
 
-[truststore]
-file_name = "client-truststore.jks"
-type = "JKS"
-password = "wso2carbon"
-
-[keystore]
-userstore_password_encryption = "InternalKeyStore"
-
 [keystore.tls]
 file_name = "wso2carbon.jks"
 type = "JKS"
 password = "wso2carbon"
 alias = "wso2carbon"
 key_password = "wso2carbon"
+
+#[truststore]
+#file_name = "client-truststore.jks"
+#type = "JKS"
+#password = "wso2carbon"
+
+#[keystore]
+#userstore_password_encryption = "InternalKeyStore"
+
 
 #[keystore.primary]
 #file_name =  "wso2carbon.jks"
@@ -62,7 +63,7 @@ key_password = "wso2carbon"
 #key_password =  "wso2carbon"
 
 [[apim.gateway.environment]]
-name = "default"
+name = "Default"
 type = "hybrid"
 provider = "wso2"
 gateway_type = "Regular"
@@ -112,6 +113,25 @@ gateway_labels = ["Default"]
 
 [apim.analytics]
 enable = false
+#config_endpoint = "https://analytics-event-auth.choreo.dev/auth/v1"
+#auth_token = "<on-prem-key>"
+
+[apim.ai]
+enable = true
+token = ""
+endpoint = ""
+
+[apim.key_manager]
+enable_apikey_subscription_validation = true
+service_url = "https://is:9444/services/"
+type = "WSO2-IS"
+#username = "$ref{super_admin.username}" # uncomment it as it is in ciam
+#password = "$ref{super_admin.password}" # uncomment is as it is in ciam
+#pool.init_idle_capacity = 50
+#pool.max_idle = 100
+#key_validation_handler_type = "default"
+#key_validation_handler_type = "custom"
+#key_validation_handler_impl = "org.wso2.carbon.apimgt.keymgt.handlers.DefaultKeyValidationHandler"
 
 [apim.sdk]
 supported_languages = [
@@ -130,22 +150,6 @@ supported_languages = [
   "clojure",
 ]
 
-[apim.ai]
-enable = true
-token = ""
-endpoint = ""
-
-[apim.key_manager]
-#enable_apikey_subscription_validation = true
-service_url = "https://is:9444/services/"
-username = "$ref{super_admin.username}"
-password = "$ref{super_admin.password}"
-#pool.init_idle_capacity = 50
-#pool.max_idle = 100
-#key_validation_handler_type = "default"
-#key_validation_handler_type = "custom"
-#key_validation_handler_impl = "org.wso2.carbon.apimgt.keymgt.handlers.DefaultKeyValidationHandler"
-
 #[apim.oauth_config]
 #enable_outbound_auth_header = false
 #auth_header = "Authorization"
@@ -155,7 +159,7 @@ password = "$ref{super_admin.password}"
 
 [apim.devportal]
 url = "https://localhost:${mgt.transport.https.port}/devportal"
-create_default_application = false
+create_default_application = true
 #enable_application_sharing = false
 #if application_sharing_type, application_sharing_impl both defined priority goes to application_sharing_impl
 #application_sharing_type = "default" #changed type, saml, default #todo: check the new config for rest api
@@ -259,6 +263,9 @@ subscriptions = ["POST_ADD_USER"]
 [service_provider]
 sp_name_regex = "^[\\sa-zA-Z0-9._-]*$"
 
+[database.local]
+url = "jdbc:h2:./repository/database/WSO2CARBON_DB;DB_CLOSE_ON_EXIT=FALSE"
+
 [[event_listener]]
 id = "token_revocation"
 type = "org.wso2.carbon.identity.core.handler.AbstractIdentityHandler"
@@ -269,12 +276,15 @@ order = 1
 notification_endpoint = "https://localhost:${mgt.transport.https.port}/internal/data/v1/notify"
 username = "${admin.username}"
 password = "${admin.password}"
-'header.X-WSO2-KEY-MANAGER' = "default"
+'header.X-WSO2-KEY-MANAGER' = "WSO2-IS"
 
 [oauth.grant_type.token_exchange]
 enable = true
 allow_refresh_tokens = true
 iat_validity_period = "1h"
+
+[config_data]
+path = "/_system/apim/config"
 
 #[transport.https.properties]
 #port = 9443
@@ -283,6 +293,21 @@ iat_validity_period = "1h"
 [transport.passthru_https.sender.parameters]
 HostnameVerifier = "AllowAll"
 
+#[integration.transaction_counter]
+#enable = true
+#server_id = "Gateway1"
+#producer_counting_thread_pool_size = 10
+#producer_scheduled_interval = 10
+#max_transaction_count_per_record = 20
+#min_transaction_count_per_record = 5
+#record_queue_size = 1000
+#publisher_scheduled_interval = 5
+#publisher_max_batch_size = 100
+#publisher_max_retries = 3
+#store_impl = "org.wso2.integration.transaction.counter.store.TransactionRecordStoreImpl"
+#service_url = "https://localhost:8080/transactions/records"
+#service_username = "admin"
+#service_password = "admin"
 
 #[[apim.event_hub.publish.url_group]]
 #urls = ["tcp://{{ template "am-pattern-3.resource.prefix" . }}-am-cp-1-service:9611"]
