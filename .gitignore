@@ -2,3 +2,5 @@
 **/server.properties
 **/wso2is-init-project**
 .env
+*.bak
+*.bak.*

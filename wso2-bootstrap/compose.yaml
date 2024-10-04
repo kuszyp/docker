@@ -12,10 +12,4 @@ services:
         - action: sync
           path: .
           target: /home/soapuser
-    networks:
-      - wso2-proxy
-
-networks:
-  wso2-proxy:
-    external: true
-    name: wso2apim-network
+    network_mode: "host"

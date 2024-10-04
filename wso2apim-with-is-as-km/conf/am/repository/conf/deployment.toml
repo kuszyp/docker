@@ -1,7 +1,8 @@
 [server]
 hostname = "localhost"
+node_ip = "127.0.0.1"
 #offset=0
-base_path = "${carbon.protocol}://${carbon.host}:${carbon.management.port}"
+base_path = "${carbon.protocol}://$ref{server.hostname}:${carbon.management.port}"
 server_role = "default"
 
 [super_admin]
@@ -123,7 +124,7 @@ endpoint = ""
 
 [apim.key_manager]
 enable_apikey_subscription_validation = true
-service_url = "https://is:9444/services/"
+service_url = "https://localhost:9444/services/"
 type = "WSO2-IS"
 #username = "$ref{super_admin.username}" # uncomment it as it is in ciam
 #password = "$ref{super_admin.password}" # uncomment is as it is in ciam
