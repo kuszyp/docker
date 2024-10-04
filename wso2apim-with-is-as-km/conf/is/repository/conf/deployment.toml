@@ -128,7 +128,7 @@ name = "org.wso2.is.notification.ApimOauthEventInterceptor"
 order = 1
 
 [event_listener.properties]
-notification_endpoint = "https://am:9443/internal/data/v1/notify"
+notification_endpoint = "https://localhost:9443/internal/data/v1/notify"
 username = "${admin.username}"
 password = "${admin.password}"
 'header.X-WSO2-KEY-MANAGER' = "WSO2-IS"
@@ -271,6 +271,8 @@ password_generator = "org.wso2.carbon.user.mgt.common.DefaultPasswordGenerator"
 [identity_mgt.password_reset_email]
 enable_password_reset_email = true
 
+[analytics.elk]
+enable=true
 
 # [[event_listener]]
 # [event_listener.properties]

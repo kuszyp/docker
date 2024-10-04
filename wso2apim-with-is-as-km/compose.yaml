@@ -4,8 +4,8 @@ services:
       context: ./dockerfiles/postgres/
       dockerfile: Dockerfile
     restart: always
-    ports:
-      - 5432:5432
+    expose:
+      - "5432" # Internal port for other services to access
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -23,7 +23,8 @@ services:
         soft: 20000
         hard: 40000
     networks:
-      - wso2-local
+      wso2-internal-network:
+        ipv4_address: "172.18.0.2"
 
   am:
     build:
@@ -34,18 +35,20 @@ services:
     env_file: .env
     healthcheck:
       test: ["CMD", "nc", "-z", "localhost", "9443"]
-      interval: 10s
+      interval: 30s
       start_period: 60s
       retries: 10
     volumes:
       - ./conf/am:/home/wso2carbon/wso2-config-volume
-    ports:
-      - "9443:9443"
-      - "8289:8289"
-      - "8243:8243"
-    networks:
-      - wso2-net
-      - wso2-local
+    # No need to expose ports anymore because we use network_mode = host
+    #ports:
+    #  - "9443:9443"
+    #- "8289:8289"
+    #- "8243:8243"
+    network_mode: "host"
+    extra_hosts:
+      - "db:172.18.0.2" # Manually map the database service's IP address
+      - "DELL:127.0.0.1" # Unknown host that was in error logs while am was starting
     depends_on:
       db:
         condition: service_healthy
@@ -56,33 +59,34 @@ services:
     build:
       context: ./dockerfiles/is/
       dockerfile: Dockerfile
-      args:
-        BASE_IS_IMAGE: ${IS_IMAGE}
     healthcheck:
       test: ["CMD", "nc", "-z", "localhost", "9444"]
-      #["CMD", curl", "-k", "-f", "https://localhost:9443/carbon/admin/login.jsp"]
-      interval: 10s
+      interval: 30s
       timeout: 60s
       retries: 10
       start_period: 30s
-    ports:
-      - "9444:9444"
-    #command: -debug 5005
-    #command: -DosgiConsole
+    # No need to expose porta because we use network_mode = host
+    #ports:
+    #  - "9444:9444"
+    #      - "5005i:5005"
+    command: ["-debug", "5005", "-DosgiConsole"]
     volumes:
       - ./conf/is:/home/wso2carbon/wso2-config-volume
     depends_on:
       db:
         condition: service_healthy
-    networks:
-      - wso2-net
-      - wso2-local
+    network_mode: host
+    extra_hosts:
+      - "db:172.18.0.2"
 
 volumes:
   volume_db:
+    driver: "local" # Volume for database persistence
 
 networks:
-  wso2-net:
-    name: wso2apim-network
+  wso2-internal-network:
+    name: wso2-internal-network
     driver: bridge
-  wso2-local:
+    ipam:
+      config:
+        - subnet: "172.18.0.0/16" # Define a custom subnet for manual IP assignment
