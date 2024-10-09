@@ -9,9 +9,8 @@ dockerfiles/is/wso2is/repository/deployment/server/webapps/authenticationendpoin
 dockerfiles/is/wso2is-6.1.0.zip
 
 conf/is/repository/deployment/server/userstores/*.xml
-conf/is/repository/deployment/server/webapps/
+conf/is/repository/deployment/server/webapps
 
-conf.is/repository/components/plugins/
-conf/is/repository/components/dropins/org.wso2.carbon.identity*.jar
-conf/is/repository/components/dropins/pl.*.jar
+conf/is/repository/components/plugins
+conf/is/repository/components/dropins
 conf/is/repository/components/lib
