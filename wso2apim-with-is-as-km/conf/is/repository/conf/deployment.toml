@@ -204,6 +204,22 @@ http_method = "DELETE"
 permissions = "/permission/admin/manage/identity/usermgt/delete"
 scopes = "internal_user_mgt_delete"
 
+#
+# [[resource.access_control]]
+# context = "(.*)/scim2/Me/permissions(.*)"
+# secure = false
+# http_method = "GET"
+# permissions = "none"
+# scopes = "internal_login"
+# 
+# [[resource.access_control]]
+# context = "(.*)/scim2/Me/(.*)"
+# secure = false
+# http_method = "GET"
+# permissions = "none"
+# scopes = "internal_login"
+#
+
 [[resource.access_control]]
 context = "(.*)/scim2/Me/(.*)"
 secure = true
