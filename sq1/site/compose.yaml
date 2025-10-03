@@ -1,0 +1,46 @@
+services:
+  database:
+    image: mariadb:10.5.8
+    restart: always
+    volumes:
+      - ./mysqldata:/var/lib/mysql:Z
+      - ./mysqlinit:/docker-entrypoint-initdb.d
+    env_file: ../../../environment/docker/sq1/site/.env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - backend
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - backend
+
+  wordpress:
+    image: site:005
+    restart: always
+    ports:
+      - 8888:80
+      - 4040:443
+    networks:
+      - backend
+    env_file: ../../../environment/docker/sq1/site/.env
+    environment:
+      WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+      POWERBI_CLIENTID: ${POWERBI_CLIENTID}
+      POWERBI_CLIENTSECRET: ${POWERBI_CLIENTSECRET}
+      POWERBI_TENANTID: ${POWERBI_TENANTID}
+      POWERBI_USERNAME: ${POWERBI_USERNAME}
+      POWERBI_PASSWORD: ${POWERBI_PASSWORD}
+
+networks:
+  backend:
