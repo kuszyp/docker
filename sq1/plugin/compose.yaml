@@ -1,0 +1,8 @@
+services:
+  buildplugin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../../../environment/docker/sq1/source/html/wp-content/plugins:/app
+    command: sh -c "php composer.phar self-update && php composer.phar update --with-all-dependencies --ignore-platform-reqs"
